@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
+
+/* Print / report page styles */
+.report-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  padding: 20mm 25mm;
+  margin: 0 auto 16px;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+  position: relative;
+}
+
+.report-page * {
+  box-sizing: border-box;
+}
+
+@media print {
+  .report-page {
+    box-shadow: none;
+    margin: 0;
+    padding: 15mm 20mm;
+    page-break-after: always;
+  }
+}
